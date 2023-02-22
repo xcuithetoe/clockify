@@ -12,9 +12,15 @@
 #shadow {
   margin: 5px 5px, 10px var(--greyLight-2), -3px, -3px, 8px var(--white);
 }
+
 #main_time {
-  font-size: 50px;
-  position:center;  
+  font-size: 200px;
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  vertical-align: middle;
+
+
 }
 body {
     background: rgb(256, 256, 256);
