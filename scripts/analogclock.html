@@ -1,25 +1,61 @@
 <!DOCTYPE html>
-<link rel="stylesheet" href="clock.css">
+<html>
+<head>
+	<title>Digital Clock</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+			background-color: #fff;
+		}
+		
+		.clock {
+			display: flex;
+			flex-wrap: wrap;
+			width: 55%;
+			height: 50%;
+			background-color: #fff;
+			border-radius: 10px;
+			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+			font-family: Arial, sans-serif;
+			font-size: 10em;
+			color: #333;
+			text-align: center;
+			align-items: center;
+			justify-content: center;
+		}
+		
+		.vertical {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			height: 100%;
+		}
+		
+		.horizontal {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-around;
+			width: 100%;
+		}
+		
+		.dot {
+			height: 0.2em;
+			width: 0.2em;
+			border-radius: 50%;
+			background-color: #333;
+		}
+	</style>
+</head>
+<body>
+	<div class="clock">
+      13:34 PM
+		</div>
+	</div>
 
-
-<h1 style="text-align:center" id="main_time">13:25</h1>
-
-
-
-
-
-
-
-
-
-
-<form id="alarm-form">
-  <label for="alarm-time">Alarm Time:</label>
-  <input type="time" id="alarm-time">
-  <br>
-  <label for="reminder-message">Reminder:</label>
-  <input type="text" id="reminder-message">
-  <br>
-  <button type="submit">Set Alarm</button>
-</form>
-<script src="clock.js"></script>
+</body>
+</html>
