@@ -2,62 +2,57 @@
 <html>
 <head>
 	<title>Digital Clock</title>
-	<style>
-		body {
-			margin: 0;
-			padding: 0;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			height: 100vh;
-			background-color: #fff;
-		}
-		
-		.clock {
-			display: flex;
-			flex-wrap: wrap;
-			width: 55%;
-			height: 50%;
-			background-color: #fff;
-			border-radius: 10px;
-			box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.5);
-			font-family: Arial, sans-serif;
-			font-size: 10em;
-			color: #333;
-			text-align: center;
-			align-items: center;
-			justify-content: center;
-		}
-		
-		.vertical {
-			display: flex;
-			flex-direction: column;
-			justify-content: space-around;
-			height: 100%;
-		}
-		
-		.horizontal {
-			display: flex;
-			flex-direction: row;
-			justify-content: space-around;
-			width: 100%;
-		}
-		
-		.dot {
-			height: 0.2em;
-			width: 0.2em;
-			border-radius: 50%;
-			background-color: #333;
-		}
-	</style>
+	<link rel="stylesheet" type="text/css" href="clock.css">
 
 </head>
 <body>
+
 	<div class="clock">
-      <p>ji</p>
+		<span id="h2" class="digit2"><span>0</span></span>	
+		<span id="h1" class="digit1"><span>0</span></span>
+
+		<br>
+
+		<div class="btn-container">
+			<button class="btn" id="alarmbtn">Alarm</button>
+			<button class="btn">Productivity</button>
+			<button class="btn">Notes</button>
+			<button class="btn" id="settingsbtn">Settings</button>
 		</div>
 	</div>
-	<img src="pics\test_svg.svg" alt="Flowers in Chania">
+
+	<div id="alarm-modal" class="modal">
+		<div class="modal-content">
+		  <span class="close">&times;</span>
+		  <h1>Alarm & Timer</h1>
+		  <p>Some text in the modal.</p>
+
+		  <form id="alarm-form">
+			<label for="alarm-time">Alarm Time:</label>
+			<input type="time" id="alarm-time">
+			<br>
+			<label for="reminder-message">Reminder:</label>
+			<input type="text" id="reminder-message">
+			<br>
+			<button type="submit">Set Alarm</button>
+		  </form>
+		  
+		</div>
+	  </div>
+	  <div id="settings-modal" class="modal">
+		<div class="modal-content">
+		  <span class="close">&times;</span>
+		  <h1><u>Settings</u></h1>
+		  <br>
+		  <h2>Color/Theme</h2>
+		  <label for="time-color">Digital Time Text Color:</label>
+		  <input type="color" id="time-color" name="time-color">
+		  <button id="save-settings-btn">Save</button>
+		</div>
+	  </div>
+	<!-- <img src="pics\test_svg.svg" alt="Flowers in Chania" > -->
+
+
 
 </body>
 <script src=clock.js></script>

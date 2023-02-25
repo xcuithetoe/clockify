@@ -1,61 +1,131 @@
-:root {
-  --primary-light: #8abdff;
-  --primary: #6d5dfc;
-  --primary-dark: #5b0eeb;
-  
-  --white: #FFFFFF;
-  --greyLight-1: #E4EBF5;
-  --greyLight-2: #c8d0e7;
-  --greyLight-3: #bec8e4;
-  --greyDark: #9baacf;
-}
-#shadow {
-  margin: 5px 5px, 10px var(--greyLight-2), -3px, -3px, 8px var(--white);
-}
-
-#main_time {
-  font-size: 200px;
-  position: absolute;
-  left: 50%;
-  bottom: 50%;
-  vertical-align: middle;
-
-
-}
 body {
-    background: rgb(256, 256, 256);
-    color: #333;
-    font-family: Helvetica, sans-serif;
-  }
-  
-  
-  
-  #clock {
-    background: #fff;
-    border: 15px solid var(--white);
-    border-radius: 50%;
-    position: relative;
-    width: 320px;
-    height: 320px;
-    margin: 100px auto;
-    box-shadow: 5px 5px 10px #c8d0e7, 
-                -3px -3px 8px var(--white);
-    /*
-    box-shadow: -4px -4px 10px rgba(67,67,67,0.5),
-                inset 4px 4px 10px rgba(0,0,0,0.5),
-                inset -4px -4px 10px rgba(67,67,67,0.5),
-                4px 4px 10px rgba(0,0,0,0.3);
-                */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #fff
+}
+.clockAndButton {
+  display: flex;
+  flex-direction: column;
+  width: 55%;
+  height: 50;
+  background-color: #fff;
+}
 
-  }
+.clock {
+  display: flex;
+    flex-direction: column;
+  width: 55%;
+  height: 50%;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.5);
 
-  .h4 {
-    text-align: center;
-  }
+  color: #333;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.clock span {
+  font-family: Arial, sans-serif;
+  font-size: 1em;
+  color: #333;
+}
+
+.clock .digit1 .date-time{
+  font-family: Georgia, serif;
   
-  @keyframes rotateHand {
-    to {
-      transform: rotate(1turn);
-    }
-  }
-  
+  font-size: 3em;
+}
+
+.clock .digit2 .date-time {
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  font-size: 15em;
+}
+
+.clock .digit3 span {
+  font-family: 'Lucida Console', monospace;
+  text-transform: uppercase;
+}
+
+img {
+  position: absolute;
+  top: 0px;
+  right: 0px
+}
+
+.vertical {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+}
+
+.horizontal {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.dot {
+  height: 0.2em;
+  width: 0.2em;
+  border-radius: 50%;
+  background-color: #333;
+}
+.btn-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.btn {
+  margin: 10px;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor:grabbing;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+  border-radius: 1em;
+}
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
