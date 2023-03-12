@@ -140,3 +140,60 @@ window.onclick = function(event) {
     modal_settings.style.display = "none";
   }
 };
+
+//=================================================================================================================
+//=================================================================================================================
+//Draw
+const canvas = document.querySelector('canvas');
+const context = canvas.getContext('2d');
+
+// Set the canvas dimensions when the page loads
+canvas.width = canvas.offsetWidth;
+canvas.height = canvas.offsetHeight;
+context.lineWidth=10;
+
+// Initialize variables to track the mouse state
+let isDrawing = false;
+let lastX = 0;
+let lastY = 0;
+
+function startDrawing(event) {
+    isDrawing = true;
+    [lastX, lastY] = [event.offsetX, event.offsetY];
+}
+
+function stopDrawing() {
+    isDrawing = false;
+}
+
+function draw(event) {
+    if (!isDrawing) return;
+    const [currentX, currentY] = [event.offsetX, event.offsetY];
+
+    // Calculate control points for Bezier curve
+    const x1 = lastX + (currentX - lastX) / 3;
+    const y1 = lastY + (currentY - lastY) / 3;
+    const x2 = currentX - (currentX - lastX) / 3;
+    const y2 = currentY - (currentY - lastY) / 3;
+
+    // Draw the Bezier curve
+    context.beginPath();
+    context.moveTo(lastX, lastY);
+    context.bezierCurveTo(x1, y1, x2, y2, currentX, currentY);
+    context.stroke();
+
+    // Update lastX and lastY
+    [lastX, lastY] = [currentX, currentY];
+}
+
+function clearCanvas() {
+    // Clear the canvas using clearRect
+    context.clearRect(0, 0, canvas.width, canvas.height);
+}
+
+// Add event listeners
+canvas.addEventListener('mousedown', startDrawing);
+canvas.addEventListener('mouseup', stopDrawing);
+canvas.addEventListener('mousemove', draw);
+canvas.addEventListener('mouseout', stopDrawing);
+document.querySelector('button').addEventListener('click', clearCanvas);
