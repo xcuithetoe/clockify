@@ -4,6 +4,7 @@ let now_playing = document.querySelector(".now-playing");
 let track_art = document.querySelector(".track-art");
 let track_name = document.querySelector(".track-name");
 let track_artist = document.querySelector(".track-artist");
+let player = document.querySelector('.player');
 
 let playpause_btn = document.querySelector(".playpause-track");
 let next_btn = document.querySelector(".next-track");
@@ -25,8 +26,8 @@ let curr_track = document.createElement('audio');
 // Define the list of tracks that have to be played
 let track_list = [
 {
-	name: "Night Owl",
-	artist: "Broke For Free",
+	name: "4 Seasons",
+	artist: "Vilvaldi",
 	image: "Image URL",
 	path: "silentspring.mp3"
 },
@@ -69,6 +70,7 @@ function loadTrack(track_index) {
   
   // Apply a random background color
   random_bg_color();
+  random_musicplayer_color();
   }
   
   function random_bg_color() {
@@ -84,6 +86,19 @@ function loadTrack(track_index) {
   // Set the background to the new color
   document.body.style.background = bgColor;
   }
+  function random_musicplayer_color() {
+    // Get a random number between 64 to 256
+    // (for getting lighter colors)
+    let red = Math.floor(Math.random() * 256) + 64;
+    let green = Math.floor(Math.random() * 256) + 64;
+    let blue = Math.floor(Math.random() * 256) + 64;
+    
+    // Construct a color with the given values
+    let bgColor = "rgb(" + red + ", " + green + ", " + blue + ")";
+    
+    // Set the background to the new color
+    player.style.backgroundColor = bgColor;
+    }
   
   // Function to reset all values to their default
   function resetValues() {
