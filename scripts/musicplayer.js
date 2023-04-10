@@ -29,7 +29,7 @@ let track_list = [
 	name: "4 Seasons",
 	artist: "Vilvaldi",
 	image: "Image URL",
-	path: "silentspring.mp3"
+	path: "https://github.com/xcuithetoe/clockify/blob/main/silentspring.mp3"
 },
 {
 	name: "Enthusiast",
