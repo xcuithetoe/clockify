@@ -190,5 +190,9 @@ align items in a vertical direction */
       .video-container {
       max-height: 0;
       overflow: hidden;
-      
+      position:absolute;
+      right: 5vh;
+      bottom: 5vh;
+      height:min-content;
+      width:min-content;
     }
