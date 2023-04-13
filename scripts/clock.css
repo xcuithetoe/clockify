@@ -176,6 +176,9 @@ align items in a vertical direction */
         font-size: 20px;
         padding: 10px 20px 10px 20px;
         text-decoration: none;
+        position: absolute;
+        bottom: 0;
+        right: 0;
       }
 
       .btn:hover {
@@ -187,12 +190,11 @@ align items in a vertical direction */
         background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
         text-decoration: none;
       }
-      .video-container {
-      max-height: 0;
+      #player-container {
+      max-height: 100;
       overflow: hidden;
-      position:absolute;
-      right: 5vh;
-      bottom: 5vh;
-      height:min-content;
-      width:min-content;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+
     }

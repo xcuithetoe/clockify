@@ -9,6 +9,20 @@
 
 </head>
 <body>
+	<div class="clock">
+		<span id="h2" class="digit2"><span>0</span></span>	
+		<span id="h1" class="digit1"><span>0</span></span>
+
+		<br>
+
+		<div class="btn-container">
+			<button class="btn" id="alarmbtn">Alarm</button>
+			<button class="btn">Productivity</button>
+			<button class="btn">Notes</button>
+			<button class="btn" id="settingsbtn">Settings</button>
+		</div>
+	</div>
+
 
 
 	<div id="alarm-modal" class="modal">
@@ -41,10 +55,15 @@
 		</div>
 	  </div>
 	  
+	  <div id="player-container"  style="display:none;">
+		<div id="player"></div>
+	  </div>
+	  <button id="play-button" class="button">Play Livestream</button>   
 	<!-- <img src="pics\test_svg.svg" alt="Flowers in Chania" > -->
 	<video autoplay loop muted>
 		<source src="lofig.mp4" type="video/mp4"
 	</video>
+	
 
 	<!-- 
 ███╗░░░███╗██╗░░░██╗░██████╗██╗░█████╗░  ██████╗░██╗░░░░░░█████╗░██╗░░░██╗███████╗██████╗░
